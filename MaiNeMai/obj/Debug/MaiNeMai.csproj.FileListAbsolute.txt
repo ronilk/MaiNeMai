@@ -1,0 +1,9 @@
+F:\WinAppProjects\MaiNeMai\MaiNeMai\bin\Debug\MaiNeMai.exe.config
+F:\WinAppProjects\MaiNeMai\MaiNeMai\bin\Debug\MaiNeMai.exe
+F:\WinAppProjects\MaiNeMai\MaiNeMai\bin\Debug\MaiNeMai.pdb
+F:\WinAppProjects\MaiNeMai\MaiNeMai\obj\Debug\MaiNeMai.csprojResolveAssemblyReference.cache
+F:\WinAppProjects\MaiNeMai\MaiNeMai\obj\Debug\MaiNeMai.Form1.resources
+F:\WinAppProjects\MaiNeMai\MaiNeMai\obj\Debug\MaiNeMai.Properties.Resources.resources
+F:\WinAppProjects\MaiNeMai\MaiNeMai\obj\Debug\MaiNeMai.csproj.GenerateResource.Cache
+F:\WinAppProjects\MaiNeMai\MaiNeMai\obj\Debug\MaiNeMai.exe
+F:\WinAppProjects\MaiNeMai\MaiNeMai\obj\Debug\MaiNeMai.pdb
