@@ -19,7 +19,6 @@ namespace MaiNeMai
         }
 
         public delegate void PassPillowHandler(object source, PassPillowEventArgs arg);
-
         public event PassPillowHandler passPillowEvent;
 
         public void OnPillowPass()
@@ -28,16 +27,51 @@ namespace MaiNeMai
 
             if (passPillowEvent != null)
             {
-                hasPillow = false;
+                this.hasPillow = false;
                 passPillowEvent(this, arg);
+            }
+        }
+
+        public delegate void EndGameHandler(object source, EndGameEventArgs arg);
+        public event EndGameHandler endGameEvent;
+
+        public void OnEndGame()
+        {
+            EndGameEventArgs arg = new EndGameEventArgs();
+
+            if (endGameEvent != null)
+            {
+                endGameEvent(this, arg);
             }
         }
 
         public void TakePillow(object source, PassPillowEventArgs arg)
         {
-            hasPillow = true;
+            this.hasPillow = true;
             Thread.Sleep(2000);
             this.OnPillowPass();
+        }
+
+        public void StartNewRound(object source, EndGameEventArgs arg)
+        {
+            this.hasPillow = true;
+        }
+
+        public void ActOnMusicStart(object source, MusicStartEventArgs arg)
+        {
+            if (hasPillow)
+            {
+                Thread.Sleep(2000);
+                this.OnPillowPass();
+            }
+        }
+
+        public void ActOnMusicStop(object source, MusicStopEventArgs arg)
+        {
+            if (hasPillow == true)
+            {
+                this.OnEndGame();
+            }
         }
     }
 
@@ -47,5 +81,6 @@ namespace MaiNeMai
 
     public class EndGameEventArgs : EventArgs
     {
+        //public int Id;
     }
 }
