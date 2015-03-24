@@ -47,6 +47,7 @@ namespace MaiNeMai
 
         public void TakePillow(object source, PassPillowEventArgs arg)
         {
+            Console.WriteLine("Player " + this.Id.ToString() + " has pillow");
             this.hasPillow = true;
             Thread.Sleep(2000);
             this.OnPillowPass();

@@ -30,6 +30,8 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.btnInit = new System.Windows.Forms.Button();
+            this.btnMusicStart = new System.Windows.Forms.Button();
+            this.btnMusicStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -50,12 +52,35 @@
             this.btnInit.TabIndex = 1;
             this.btnInit.Text = "Init Game";
             this.btnInit.UseVisualStyleBackColor = true;
+            this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
+            // 
+            // btnMusicStart
+            // 
+            this.btnMusicStart.Location = new System.Drawing.Point(12, 146);
+            this.btnMusicStart.Name = "btnMusicStart";
+            this.btnMusicStart.Size = new System.Drawing.Size(75, 23);
+            this.btnMusicStart.TabIndex = 2;
+            this.btnMusicStart.Text = "Start Music";
+            this.btnMusicStart.UseVisualStyleBackColor = true;
+            this.btnMusicStart.Click += new System.EventHandler(this.btnMusicStart_Click);
+            // 
+            // btnMusicStop
+            // 
+            this.btnMusicStop.Location = new System.Drawing.Point(108, 146);
+            this.btnMusicStop.Name = "btnMusicStop";
+            this.btnMusicStop.Size = new System.Drawing.Size(75, 23);
+            this.btnMusicStop.TabIndex = 3;
+            this.btnMusicStop.Text = "Stop Music";
+            this.btnMusicStop.UseVisualStyleBackColor = true;
+            this.btnMusicStop.Click += new System.EventHandler(this.btnMusicStop_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.btnMusicStop);
+            this.Controls.Add(this.btnMusicStart);
             this.Controls.Add(this.btnInit);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
@@ -68,6 +93,8 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInit;
+        private System.Windows.Forms.Button btnMusicStart;
+        private System.Windows.Forms.Button btnMusicStop;
     }
 }
 

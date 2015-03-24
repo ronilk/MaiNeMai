@@ -27,6 +27,24 @@ namespace MaiNeMai
             pub.OnEventOccurence(100);
         }
 
+        private void btnInit_Click(object sender, EventArgs e)
+        {
+            EnvironmentProvider.CreatePlayers(4);
+            EnvironmentProvider.WireEvents();
+            EnvironmentProvider.AssignPillow();
+        }
+
+        private void btnMusicStart_Click(object sender, EventArgs e)
+        {
+            MusicPlayer.OnMusicStart();
+
+        }
+
+        private void btnMusicStop_Click(object sender, EventArgs e)
+        {
+            MusicPlayer.OnMusicStop();
+        }
+
 
     }
 }
