@@ -19,6 +19,7 @@ namespace MaiNeMai
             {
                 players.Add(new Player(i));
             }
+            Logger.LogMessage(numberOfPlayers.ToString() + " Players created");
         }
 
         public static void AssignPillow()
@@ -30,6 +31,7 @@ namespace MaiNeMai
                                  where player.Id == originatorIndex
                                  select player).First();
             originator.hasPillow = true;
+            Logger.LogMessage("Pillow assigned to Player " + originatorIndex.ToString());            
         }
 
         public static void WireEvents()
@@ -60,9 +62,11 @@ namespace MaiNeMai
             Player outPlayer = (from p in players
                                 where p.Id == outPlayerId
                                 select p).First();            
+            Logger.LogMessage("EP removing Player" + outPlayer.ToString());
             ReWireEvents(outPlayer);
             players.Remove(outPlayer);
-            Console.WriteLine("Player " + outPlayerId.ToString() + " is removed");
+            Logger.LogMessage("EP Player" + outPlayer.ToString() + " removed");
+            
         }
 
         private static void ReWireEvents(Player outPlayer)

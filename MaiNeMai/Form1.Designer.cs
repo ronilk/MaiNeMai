@@ -32,6 +32,7 @@
             this.btnInit = new System.Windows.Forms.Button();
             this.btnMusicStart = new System.Windows.Forms.Button();
             this.btnMusicStop = new System.Windows.Forms.Button();
+            this.labelMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -74,11 +75,21 @@
             this.btnMusicStop.UseVisualStyleBackColor = true;
             this.btnMusicStop.Click += new System.EventHandler(this.btnMusicStop_Click);
             // 
+            // labelMessage
+            // 
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Location = new System.Drawing.Point(23, 207);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(76, 13);
+            this.labelMessage.TabIndex = 4;
+            this.labelMessage.Text = "game progress";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.btnMusicStop);
             this.Controls.Add(this.btnMusicStart);
             this.Controls.Add(this.btnInit);
@@ -86,6 +97,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,6 +107,7 @@
         private System.Windows.Forms.Button btnInit;
         private System.Windows.Forms.Button btnMusicStart;
         private System.Windows.Forms.Button btnMusicStop;
+        private System.Windows.Forms.Label labelMessage;
     }
 }
 

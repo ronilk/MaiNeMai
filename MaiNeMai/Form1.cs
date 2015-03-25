@@ -15,6 +15,8 @@ namespace MaiNeMai
         public Form1()
         {
             InitializeComponent();
+            btnMusicStart.Enabled = false;
+            btnMusicStop.Enabled = false;
         }
 
         //EVENTS TEST
@@ -32,17 +34,22 @@ namespace MaiNeMai
             EnvironmentProvider.CreatePlayers(4);
             EnvironmentProvider.WireEvents();
             EnvironmentProvider.AssignPillow();
+            btnInit.Enabled = false;
+            btnMusicStart.Enabled = true;
         }
 
         private void btnMusicStart_Click(object sender, EventArgs e)
         {
-            MusicPlayer.OnMusicStart();
-
+            btnMusicStart.Enabled = false;
+            btnMusicStop.Enabled = true;
+            MusicPlayer.OnMusicStart();            
         }
 
         private void btnMusicStop_Click(object sender, EventArgs e)
         {
-            MusicPlayer.OnMusicStop();
+            btnMusicStart.Enabled = true;
+            btnMusicStop.Enabled = false;
+            MusicPlayer.OnMusicStop();            
         }
 
 

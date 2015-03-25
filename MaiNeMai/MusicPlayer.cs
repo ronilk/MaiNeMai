@@ -16,6 +16,7 @@ namespace MaiNeMai
             MusicStartEventArgs arg = new MusicStartEventArgs();
             if (eventMusicStart != null)
             {
+                Logger.LogMessage("Start Music");
                 eventMusicStart(null, arg);
             }
         }
@@ -28,6 +29,7 @@ namespace MaiNeMai
             MusicStopEventArgs arg = new MusicStopEventArgs();
             if (eventMusicStop != null)
             {
+                Logger.LogMessage("Stop Music");
                 eventMusicStop(null, arg);
             }
         }
