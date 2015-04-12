@@ -62,10 +62,10 @@ namespace MaiNeMai
             Player outPlayer = (from p in players
                                 where p.Id == outPlayerId
                                 select p).First();            
-            Logger.LogMessage("EP removing Player" + outPlayer.ToString());
+            Logger.LogMessage("EP removing Player " + outPlayerId.ToString());
             ReWireEvents(outPlayer);
             players.Remove(outPlayer);
-            Logger.LogMessage("EP Player" + outPlayer.ToString() + " removed");
+            Logger.LogMessage("EP Player " + outPlayerId.ToString() + " removed");
             
         }
 

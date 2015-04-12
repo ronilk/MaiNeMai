@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -42,14 +43,18 @@ namespace MaiNeMai
         {
             btnMusicStart.Enabled = false;
             btnMusicStop.Enabled = true;
-            MusicPlayer.OnMusicStart();            
+            //MusicPlayer.OnMusicStart();            
+            //Thread thMusicStart = new Thread(new ThreadStart(MusicPlayer.OnMusicStart));
+            MusicPlayer.thMusicStart.Start();
         }
 
         private void btnMusicStop_Click(object sender, EventArgs e)
         {
             btnMusicStart.Enabled = true;
             btnMusicStop.Enabled = false;
-            MusicPlayer.OnMusicStop();            
+            //MusicPlayer.OnMusicStop();
+            //Thread thMusicStop = new Thread(new ThreadStart(MusicPlayer.OnMusicStop));            
+            MusicPlayer.thMusicStop.Start();
         }
 
 

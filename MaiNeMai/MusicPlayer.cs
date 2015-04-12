@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MaiNeMai
@@ -10,6 +11,9 @@ namespace MaiNeMai
     {
         public delegate void MusicStartHandler(object source, MusicStartEventArgs arg);
         public static event MusicStartHandler eventMusicStart;
+
+        public static Thread thMusicStart = new Thread(new ThreadStart(MusicPlayer.OnMusicStart));
+        public static Thread thMusicStop = new Thread(new ThreadStart(MusicPlayer.OnMusicStop));
 
         public static void OnMusicStart()
         {

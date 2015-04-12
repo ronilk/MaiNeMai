@@ -10,11 +10,16 @@ namespace MaiNeMai
 {
     public class Logger
     {
+        private static object locker = new object();
+
         public static void LogMessage(string message)
-        {
-            using (StreamWriter sw = new StreamWriter(@"F:\WinAppProjects\MaiNeMai\maiLog.txt", true))
+        {            
+            lock (locker)
             {
-                sw.WriteLine(message + " " + DateTime.Now.ToString());
+                using (StreamWriter sw = new StreamWriter(@"F:\WinAppProjects\MaiNeMai\maiLog.txt", true))
+                {
+                    sw.WriteLine(message + " " + DateTime.Now.ToString());
+                }
             }
         }
     }
